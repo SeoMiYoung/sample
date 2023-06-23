@@ -11,7 +11,8 @@
   "description": "",
   "dependencies": {
     "css-loader": "^4.3.0",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "style-loader": "^1.3.0"
   },
   "devDependencies": {
     "webpack": "^4.46.0",
