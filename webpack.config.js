@@ -21,12 +21,13 @@ module.exports = {
         ]
       },
       {
-        test: /\.png$/, // .png 확장자로 마치는 모든 파일
-        loader: "file-loader",
+        test: /\.(png|jpg|gif|svg)$/, // .png 확장자로 마치는 모든 파일
+        loader: "url-loader",
         options: {
-          publicPath: "./dist/", // file-loader가 처리하는 파일을, 모듈로 사용했을때, 경로앞에 추가되는 문자열
+          publicPath: "./dist/", // ***-loader가 처리하는 파일을, 모듈로 사용했을때, 경로앞에 추가되는 문자열
           // 그러면 파일을 호출하는 입장에서는 앞에 ./dist를 붙히고 호출한다!
           name: "[name].[ext]?[hash]", // 파일명 형식. 쿼리 스트링 사용.
+          limit: 20000, // 20kb 이상은 기본적으로 file-loader
         },
       },
     ]
